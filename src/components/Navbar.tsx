@@ -48,8 +48,8 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Link to="/" className="text-2xl font-bold text-primary">
-            Logo
+          <Link to="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+            Modern Site
           </Link>
 
           {/* Desktop Navigation */}
@@ -59,10 +59,10 @@ const Navbar: React.FC = () => {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "font-medium transition-colors hover:text-primary",
+                  "font-medium transition-colors hover:text-purple-600 dark:hover:text-purple-400",
                   location.pathname === link.path
-                    ? "text-primary"
-                    : "text-foreground/80"
+                    ? "text-purple-600 dark:text-purple-400"
+                    : "text-gray-700 dark:text-gray-300"
                 )}
               >
                 {link.name}
@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
           <Button
             onClick={toggleMenu}
             variant="ghost"
-            className="md:hidden"
+            className="md:hidden text-gray-700 dark:text-gray-300 hover:bg-transparent hover:text-purple-600 dark:hover:text-purple-400"
             aria-label="Toggle menu"
           >
             <svg
@@ -111,16 +111,16 @@ const Navbar: React.FC = () => {
           isMenuOpen ? "max-h-64" : "max-h-0"
         )}
       >
-        <div className="bg-background shadow-lg px-6 py-4">
+        <div className="bg-white dark:bg-gray-800 shadow-lg px-6 py-4">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               className={cn(
-                "block py-3 font-medium transition-colors hover:text-primary",
+                "block py-3 font-medium transition-colors hover:text-purple-600 dark:hover:text-purple-400",
                 location.pathname === link.path
-                  ? "text-primary"
-                  : "text-foreground/80"
+                  ? "text-purple-600 dark:text-purple-400"
+                  : "text-gray-700 dark:text-gray-300"
               )}
             >
               {link.name}

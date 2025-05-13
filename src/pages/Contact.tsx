@@ -126,13 +126,13 @@ const Contact: React.FC = () => {
   return (
     <div className="pt-24 pb-16">
       {/* Header */}
-      <section className="py-12 md:py-16 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <section className="py-12 md:py-16 bg-gradient-to-b from-purple-100 to-white dark:from-purple-950 dark:to-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 animate-fade-in">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
               Contact Us
             </h1>
-            <p className="text-xl text-muted-foreground animate-fade-in stagger-delay-1">
+            <p className="text-xl text-gray-700 dark:text-gray-300 animate-fade-in stagger-delay-1">
               Reach out to us with any questions or inquiries.
             </p>
           </div>
@@ -145,56 +145,64 @@ const Contact: React.FC = () => {
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div data-animate>
-                <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
+                <h2 className="text-2xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">Get in Touch</h2>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Address</h3>
-                    <address className="not-italic text-muted-foreground">
-                      123 Example Street<br />
-                      City, State 12345<br />
-                      United States
+                    <h3 className="text-lg font-semibold mb-2 text-purple-600 dark:text-purple-400">Address</h3>
+                    <address className="not-italic text-gray-700 dark:text-gray-300">
+                      Block 331 Jakande Estate<br />
+                      Lagos, Nigeria
                     </address>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Email</h3>
-                    <p className="text-muted-foreground">
-                      <a href="mailto:info@example.com" className="hover:text-primary transition-colors">
-                        info@example.com
+                    <h3 className="text-lg font-semibold mb-2 text-purple-600 dark:text-purple-400">Email</h3>
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <a href="mailto:adebayoajani23@gmail.com" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                        adebayoajani23@gmail.com
                       </a>
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Phone</h3>
-                    <p className="text-muted-foreground">
-                      <a href="tel:+11234567890" className="hover:text-primary transition-colors">
-                        (123) 456-7890
+                    <h3 className="text-lg font-semibold mb-2 text-purple-600 dark:text-purple-400">Phone</h3>
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <a href="tel:+2347067412852" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                        +234 706 741 2852
                       </a>
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Hours</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="text-lg font-semibold mb-2 text-purple-600 dark:text-purple-400">Hours</h3>
+                    <p className="text-gray-700 dark:text-gray-300">
                       Monday - Friday: 9am - 5pm<br />
                       Saturday & Sunday: Closed
                     </p>
                   </div>
                 </div>
+                
+                {/* Nigeria Map */}
+                <div className="mt-8 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-lg">
+                  <img 
+                    src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9" 
+                    alt="Nigeria Map" 
+                    className="w-full h-56 object-cover"
+                  />
+                </div>
               </div>
               
-              <Card data-animate>
+              <Card data-animate className="border-purple-200 dark:border-purple-900">
                 <CardContent className="pt-6">
                   <form onSubmit={handleSubmit} noValidate className="space-y-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Name</Label>
+                      <Label htmlFor="name" className="text-purple-700 dark:text-purple-400">Name</Label>
                       <Input
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={errors.name ? "border-red-500" : ""}
+                        className={errors.name ? "border-red-500" : "border-purple-200 dark:border-purple-900 focus:border-purple-500 focus:ring-purple-500"}
                       />
                       {errors.name && (
                         <p className="text-sm text-red-500">{errors.name}</p>
@@ -202,14 +210,14 @@ const Contact: React.FC = () => {
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
+                      <Label htmlFor="email" className="text-purple-700 dark:text-purple-400">Email</Label>
                       <Input
                         id="email"
                         name="email"
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={errors.email ? "border-red-500" : ""}
+                        className={errors.email ? "border-red-500" : "border-purple-200 dark:border-purple-900 focus:border-purple-500 focus:ring-purple-500"}
                       />
                       {errors.email && (
                         <p className="text-sm text-red-500">{errors.email}</p>
@@ -217,13 +225,13 @@ const Contact: React.FC = () => {
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="subject">Subject</Label>
+                      <Label htmlFor="subject" className="text-purple-700 dark:text-purple-400">Subject</Label>
                       <Input
                         id="subject"
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className={errors.subject ? "border-red-500" : ""}
+                        className={errors.subject ? "border-red-500" : "border-purple-200 dark:border-purple-900 focus:border-purple-500 focus:ring-purple-500"}
                       />
                       {errors.subject && (
                         <p className="text-sm text-red-500">{errors.subject}</p>
@@ -231,36 +239,31 @@ const Contact: React.FC = () => {
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="message">Message</Label>
+                      <Label htmlFor="message" className="text-purple-700 dark:text-purple-400">Message</Label>
                       <Textarea
                         id="message"
                         name="message"
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className={errors.message ? "border-red-500" : ""}
+                        className={errors.message ? "border-red-500" : "border-purple-200 dark:border-purple-900 focus:border-purple-500 focus:ring-purple-500"}
                       />
                       {errors.message && (
                         <p className="text-sm text-red-500">{errors.message}</p>
                       )}
                     </div>
                     
-                    <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" 
+                      disabled={isSubmitting}
+                    >
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Map Section (Placeholder) */}
-      <section className="py-16 bg-secondary/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <div className="aspect-[16/9] bg-secondary rounded-lg" data-animate></div>
           </div>
         </div>
       </section>

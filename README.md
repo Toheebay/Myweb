@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/e70fa72d-cd04-4b18-af42-7bff032b1379
+**URL**: https://wobor.netlify.app/
 
 ## How can I edit this code?
 
@@ -10,7 +10,6 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e70fa72d-cd04-4b18-af42-7bff032b1379) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 

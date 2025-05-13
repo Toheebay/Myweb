@@ -9,6 +9,7 @@ import {
   CarouselPrevious
 } from "@/components/ui/carousel";
 import { ArrowRight, Flame } from "lucide-react";
+import ShootingStar from "../components/ShootingStar";
 
 const Home: React.FC = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -60,10 +61,39 @@ const Home: React.FC = () => {
     return () => clearInterval(fireInterval);
   }, []);
   
+  // Generate random shooting star positions
+  const shootingStars = Array.from({ length: 8 }, (_, i) => ({
+    color: [
+      "#8B5CF6", // Vivid Purple
+      "#D946EF", // Magenta Pink
+      "#F97316", // Bright Orange
+      "#0EA5E9", // Ocean Blue
+      "#33C3F0", // Sky Blue
+      "#1EAEDB", // Bright Blue
+      "#fff"     // White
+    ][Math.floor(Math.random() * 7)],
+    duration: 2 + Math.random() * 4,
+    delay: Math.random() * 10,
+    top: `${Math.random() * 100}%`,
+    left: `${Math.random() * 80}%`
+  }));
+  
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Carousel */}
-      <section className="pt-24 pb-16 md:pt-28 md:pb-24 bg-gradient-to-b from-fuchsia-100 to-cyan-100 dark:from-indigo-950 dark:to-purple-900">
+      <section className="pt-24 pb-16 md:pt-28 md:pb-24 bg-gradient-to-b from-fuchsia-100 to-cyan-100 dark:from-indigo-950 dark:to-purple-900 relative overflow-hidden">
+        {/* Shooting Stars */}
+        {shootingStars.map((star, index) => (
+          <ShootingStar 
+            key={index} 
+            color={star.color} 
+            duration={star.duration} 
+            delay={star.delay} 
+            top={star.top} 
+            left={star.left} 
+          />
+        ))}
+        
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative max-w-5xl mx-auto mb-12">
             {/* Blinking Light Indicator */}
@@ -76,7 +106,7 @@ const Home: React.FC = () => {
                     <img 
                       src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb" 
                       alt="Starry night" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transform scale-110 hover:scale-105 transition-transform duration-5000"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
                       <div className="p-8 md:p-12">
@@ -96,7 +126,7 @@ const Home: React.FC = () => {
                       <img 
                         src="public/lovable-uploads/74e7fe0d-88f0-4427-8800-67779dcefa8e.png" 
                         alt="Adebayo Toheeb - Software Developer"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center transform scale-105 hover:scale-110 transition-transform duration-5000"
                       />
                     </div>
                     {/* Burning Fire Effect */}
@@ -150,7 +180,7 @@ const Home: React.FC = () => {
                       <img 
                         src="public/lovable-uploads/4140d4ff-5038-49ec-a97e-4790115a0ea0.png" 
                         alt="Chakin Kim - AI Software Engineer" 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center transform scale-105 hover:scale-110 transition-transform duration-5000"
                       />
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">

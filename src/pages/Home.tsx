@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -9,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from "@/components/ui/carousel";
-import { ArrowRight, Fire } from "lucide-react";
+import { ArrowRight, Flame } from "lucide-react";
 
 const Home: React.FC = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -129,7 +128,7 @@ const Home: React.FC = () => {
                     <div className="absolute inset-0 flex items-center">
                       <div className="p-8 md:p-12 bg-gradient-to-r from-black/70 to-transparent rounded-r-xl">
                         <div className="flex items-center mb-2">
-                          <Fire className="h-6 w-6 text-orange-500 mr-2 animate-pulse" style={{filter: 'drop-shadow(0 0 5px rgba(255,165,0,0.7))'}} />
+                          <Flame className="h-6 w-6 text-orange-500 mr-2 animate-pulse" style={{filter: 'drop-shadow(0 0 5px rgba(255,165,0,0.7))'}} />
                           <span className="text-orange-300 font-semibold">Igniting Innovation</span>
                         </div>
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">

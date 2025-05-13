@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import { ArrowRight, Flame } from "lucide-react";
 import ShootingStar from "../components/ShootingStar";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Home: React.FC = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -102,100 +103,102 @@ const Home: React.FC = () => {
             <Carousel className="w-full">
               <CarouselContent>
                 <CarouselItem>
-                  <div className="aspect-[16/9] relative overflow-hidden rounded-xl shadow-xl">
-                    <img 
-                      src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb" 
-                      alt="Starry night" 
-                      className="w-full h-full object-cover transform scale-110 hover:scale-105 transition-transform duration-5000"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
-                      <div className="p-8 md:p-12">
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-                          Modern Interactive Design
-                        </h1>
-                        <p className="text-lg md:text-xl text-white/80 mb-6">
-                          Discover our exceptional features
-                        </p>
+                  <div className="rounded-xl shadow-xl overflow-hidden bg-black">
+                    <AspectRatio ratio={16/9} className="relative">
+                      <img 
+                        src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb" 
+                        alt="Starry night" 
+                        className="w-full h-full object-cover transform scale-105 hover:scale-110 transition-transform duration-5000"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+                        <div className="p-8 md:p-12">
+                          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+                            Modern Interactive Design
+                          </h1>
+                          <p className="text-lg md:text-xl text-white/80 mb-6">
+                            Discover our exceptional features
+                          </p>
+                        </div>
                       </div>
-                    </div>
+                    </AspectRatio>
                   </div>
                 </CarouselItem>
                 <CarouselItem>
-                  <div className="aspect-[16/9] relative overflow-hidden rounded-xl shadow-xl">
-                    <div className="absolute inset-0">
+                  <div className="rounded-xl shadow-xl overflow-hidden bg-black">
+                    <AspectRatio ratio={16/9} className="relative">
                       <img 
                         src="public/lovable-uploads/74e7fe0d-88f0-4427-8800-67779dcefa8e.png" 
                         alt="Adebayo Toheeb - Software Developer"
-                        className="w-full h-full object-cover object-center transform scale-105 hover:scale-110 transition-transform duration-5000"
+                        className="w-full h-full object-cover object-center transform scale-100 hover:scale-105 transition-transform duration-5000"
                       />
-                    </div>
-                    {/* Burning Fire Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-orange-600/40 mix-blend-overlay"></div>
-                    <div 
-                      className="absolute bottom-0 left-0 right-0 h-1/3"
-                      style={{
-                        background: `linear-gradient(to top, rgba(255,69,0,0.7), transparent)`,
-                        opacity: fireIntensity
-                      }}
-                    >
-                      {/* Animated Fire Particles */}
-                      {[...Array(6)].map((_, i) => (
-                        <div 
-                          key={i}
-                          className="absolute bottom-0 rounded-full bg-orange-500"
-                          style={{
-                            left: `${15 + Math.random() * 70}%`,
-                            width: `${10 + Math.random() * 20}px`,
-                            height: `${30 + Math.random() * 50}px`,
-                            opacity: 0.6 + Math.random() * 0.4,
-                            animation: `flames ${1 + Math.random()}s ease-in-out infinite alternate`,
-                            filter: 'blur(4px)',
-                            transform: `scale(${0.8 + fireIntensity * 0.4})`
-                          }}
-                        ></div>
-                      ))}
-                    </div>
-                    <div className="absolute inset-0 flex items-center">
-                      <div className="p-8 md:p-12 bg-gradient-to-r from-black/70 to-transparent rounded-r-xl">
-                        <div className="flex items-center mb-2">
-                          <Flame className="h-6 w-6 text-orange-500 mr-2 animate-pulse" style={{filter: 'drop-shadow(0 0 5px rgba(255,165,0,0.7))'}} />
-                          <span className="text-orange-300 font-semibold">Igniting Innovation</span>
-                        </div>
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                          Adebayo Toheeb
-                        </h1>
-                        <p className="text-lg md:text-xl text-white/90 mb-2">
-                          Software Developer
-                        </p>
-                        <p className="text-sm md:text-base text-white/70">
-                          Transforming ideas into elegant solutions
-                        </p>
+                      {/* Burning Fire Effect */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-orange-600/40 mix-blend-overlay"></div>
+                      <div 
+                        className="absolute bottom-0 left-0 right-0 h-1/3"
+                        style={{
+                          background: `linear-gradient(to top, rgba(255,69,0,0.7), transparent)`,
+                          opacity: fireIntensity
+                        }}
+                      >
+                        {/* Animated Fire Particles */}
+                        {[...Array(6)].map((_, i) => (
+                          <div 
+                            key={i}
+                            className="absolute bottom-0 rounded-full bg-orange-500"
+                            style={{
+                              left: `${15 + Math.random() * 70}%`,
+                              width: `${10 + Math.random() * 20}px`,
+                              height: `${30 + Math.random() * 50}px`,
+                              opacity: 0.6 + Math.random() * 0.4,
+                              animation: `flames ${1 + Math.random()}s ease-in-out infinite alternate`,
+                              filter: 'blur(4px)',
+                              transform: `scale(${0.8 + fireIntensity * 0.4})`
+                            }}
+                          ></div>
+                        ))}
                       </div>
-                    </div>
+                      <div className="absolute inset-0 flex items-center">
+                        <div className="p-8 md:p-12 bg-gradient-to-r from-black/70 to-transparent rounded-r-xl">
+                          <div className="flex items-center mb-2">
+                            <Flame className="h-6 w-6 text-orange-500 mr-2 animate-pulse" style={{filter: 'drop-shadow(0 0 5px rgba(255,165,0,0.7))'}} />
+                            <span className="text-orange-300 font-semibold">Igniting Innovation</span>
+                          </div>
+                          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                            Adebayo Toheeb
+                          </h1>
+                          <p className="text-lg md:text-xl text-white/90 mb-2">
+                            Software Developer
+                          </p>
+                          <p className="text-sm md:text-base text-white/70">
+                            Transforming ideas into elegant solutions
+                          </p>
+                        </div>
+                      </div>
+                    </AspectRatio>
                   </div>
                 </CarouselItem>
                 <CarouselItem>
-                  <div className="aspect-[16/9] relative overflow-hidden rounded-xl shadow-xl">
-                    <div className="absolute inset-0">
+                  <div className="rounded-xl shadow-xl overflow-hidden bg-black">
+                    <AspectRatio ratio={16/9} className="relative">
                       <img 
                         src="public/lovable-uploads/4140d4ff-5038-49ec-a97e-4790115a0ea0.png" 
                         alt="Chakin Kim - AI Software Engineer" 
-                        className="w-full h-full object-cover object-center transform scale-105 hover:scale-110 transition-transform duration-5000"
+                        className="w-full h-full object-cover object-center transform scale-100 hover:scale-105 transition-transform duration-5000"
                       />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
-                      <div className="p-8 md:p-12">
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                          Chakin Kim
-                        </h1>
-                        <p className="text-lg md:text-xl text-white/90 mb-2">
-                          AI Software Engineer
-                        </p>
-                        <p className="text-sm md:text-base text-white/70">
-                          Pioneering intelligent solutions
-                        </p>
+                      <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+                        <div className="p-8 md:p-12">
+                          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                            Chakin Kim
+                          </h1>
+                          <p className="text-lg md:text-xl text-white/90 mb-2">
+                            AI Software Engineer
+                          </p>
+                          <p className="text-sm md:text-base text-white/70">
+                            Pioneering intelligent solutions
+                          </p>
+                        </div>
                       </div>
-                    </div>
+                    </AspectRatio>
                   </div>
                 </CarouselItem>
               </CarouselContent>

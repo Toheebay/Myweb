@@ -54,16 +54,19 @@ const About: React.FC = () => {
               <h2 className="text-3xl font-bold mb-6" data-animate>Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p data-animate>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed euismod, nisl nec ultrices aliquam, nunc nisl aliquet nunc, 
-                  vitae aliquam nisl nunc eu nisi. Sed euismod, nisl nec ultrices aliquam, nunc nisl aliquet nunc.
+                Adebayo Toheeb is a passionate and forward-thinking tech enthusiast currently participating in the PLP (Power Learn Project) program — a fully funded Software Development scholarship aimed at empowering African youth with digital skills.
                 </p>
                 <p data-animate>
-                  Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. 
-                  Nulla quis lorem ut libero malesuada feugiat.
+                With a background in Computer Engineering from Olabisi Onabanjo University and hands-on experience in Python development, web design, and digital marketing, Toheeb brings a unique blend of creativity and technical skill to the PLP program. His dedication is evident in how he has approached each module with intentionality and a growth mindset.
                 </p>
                 <p data-animate>
-                  Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. 
-                  Cras ultricies ligula sed magna dictum porta.
+                As part of the program, he is actively building real-world projects, including:
+
+✅ HTML/CSS websites for structured frontend design
+
+✅ A data analysis project titled COVID-19 Global Data Tracker, where he applied Python to clean, analyze, and visualize global COVID trends
+
+✅ Version control skills using Git and GitHub
                 </p>
               </div>
             </div>
@@ -130,15 +133,15 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Jane Doe",
+                name: "Adebayo Toheeb",
                 position: "CEO & Founder",
               },
               {
-                name: "John Smith",
+                name: "John",
                 position: "CTO",
               },
               {
-                name: "Emily Johnson",
+                name: "Adegbenga",
                 position: "Design Lead",
               }
             ].map((member, index) => (
@@ -175,5 +178,6 @@ const About: React.FC = () => {
     </div>
   );
 };
+
 
 export default About;

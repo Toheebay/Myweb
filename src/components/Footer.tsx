@@ -2,6 +2,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import image from './74e7fe0d-88f0-4427-8800-67779dcefa8e.png';
+
+<img src={image} alt="Component Image" />
+
+
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
@@ -43,14 +48,13 @@ const Footer: React.FC = () => {
               <p className="mt-2">
                 Email: <a href="mailto:adebayoajani23@gmail.com" className="hover:text-purple-300 transition-colors">adebayoajani23@gmail.com</a>
               </p>
-              <p>
-                Phone: <a href="tel:+2347067412852" className="hover:text-purple-300 transition-colors">+234 706 741 2852</a>
+              <p>                Phone: <a href="tel:+2347067412852" className="hover:text-purple-300 transition-colors">+234 706 741 2852</a>
               </p>
             </address>
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; {currentYear} Modern Website. All rights reserved.</p>
+          <p>&copy; {currentYear} Adebayo Website. All rights reserved.</p>
         </div>
       </div>
     </footer>
